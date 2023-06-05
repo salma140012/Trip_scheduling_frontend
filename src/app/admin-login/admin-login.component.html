@@ -1,0 +1,53 @@
+<head>
+    <meta name="viewport" >
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    form {border: 5px solid #f1f1f1;}
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  input[type=text], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  </style> 
+    </head>
+   <body>
+  <div class = "container col-md-6">
+      <h1 style=" color:#8b0000;"><b>Admin Login</b></h1>
+      <form #adminloginform = "ngForm" (ngSubmit)="SignInAdmin()">
+  
+          <small class="text-danger">{{msg}}</small>
+          <div class="form-group">
+            <label for="email"><b>Email:</b> </label>
+            <input type="email" class="form-control" id = "email" name = "email" [(ngModel)]=admin.email required #email = "ngModel" 
+            [class.is-invalid]="email.invalid && email.touched">
+            <small class="text-danger"[class.d-none]="email.valid || email.untouched">Email feild is required</small>
+          </div>
+  
+          
+          <div class="form-group">
+            <label for="pwd"><b>Password:</b></label>
+            <input type="password" class="form-control" id="password" name = "password" [(ngModel)]=admin.password required #password = "ngModel"
+            [class.is-invalid]="password.invalid && password.touched"
+            >
+            <small class="text-danger"[class.d-none]="password.valid || password.untouched">password field is required</small>
+          </div>
+          <br>
+          <button [disabled]="adminloginform.form.invalid" style="margin:5px" type="submit" class="btn btn-default">Login</button>
+          <button [routerLink]="['/adminsignup']"style="margin:5px" class="btn btn-default">Sign-up</button>
+      </form>
+      
+  
+  </div>
+  </body>

@@ -1,0 +1,31 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Update Trip</h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label>Start time </label>
+            <input type="text" class="form-control" id="startTime"
+            [(ngModel)]="trip.startTime" name="startTime">
+        </div>
+    
+        <div class="form-group">
+            <label>End time </label>
+            <input type="text" class="form-control" id="endTime"
+            [(ngModel)]="trip.endTime" name="endTime">
+        </div>
+    
+        <div class="form-group">
+            <label>From Station </label>
+            <input type="text" class="form-control" id="fromStation"
+            [(ngModel)]="trip.fromStation" name="fromStation">
+        </div>
+    
+        <div class="form-group">
+            <label>To Station</label>
+            <input type="text" class="form-control" id="toStation"
+            [(ngModel)]="trip.toStation" name="toStation">
+        </div>
+    <button class="btn btn-default" type="submit">Update</button>
+    <button class="btn btn-default" (click)="backToTripList()">Go back to list</button>
+    </form>
+    </div>

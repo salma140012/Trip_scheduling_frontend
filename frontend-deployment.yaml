@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+
+spec:
+  selector:
+    matchLabels:
+      app: trip-scheduling-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: trip-scheduling-frontend
+    spec:
+      containers:
+        - name: tool-frontend
+          image: docker.io/doddg10/frontend-image:latest
+          ports:
+            - containerPort: 8080        # the one it listens to in ngnix.conf file
+
+---
+apiVersion: v1 
+kind: Service # kind of resource
+metadata: 
+  name: frontend-service
+spec:
+  selector:
+    app: trip-scheduling-frontend
+
+  ports:
+    - protocol: "TCP"
+      port: 8080 # service port in cluster
+      targetPort: 8080 # port of service that's going to be exposed

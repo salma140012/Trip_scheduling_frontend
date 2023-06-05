@@ -1,0 +1,47 @@
+<!--<p>admin-login-success works!</p>-->
+
+
+<html>
+  
+
+
+    <body>
+        
+        <div class="fixed-header">
+            <div class="container">
+               
+            </div>
+        </div>
+        <br>
+        <br>
+        
+            <h1 class="text-center">{{title}}</h1>
+          
+            <br>
+            <br>
+            <br> 
+    <div class="flex-parent jc-center">
+        <button class="btn btn-default" (click)="gotoTrip()">Click here to go to Trips Page</button>
+    </div>
+        <br>
+        <br>
+        <br>
+    <div class="flex-parent jc-center">
+        <button class="btn btn-default"(click)="gotoStation()">Click here to go to Stations Page</button>
+    </div>
+    
+<div class="container">
+
+<router-outlet></router-outlet>
+</div>
+
+<div class="container">
+    
+</div>    
+
+
+
+    </body>
+  
+
+</html>
